@@ -1,0 +1,25 @@
+<div class="alert" ng-if="!flights">
+	Oops, something went wrong. Please refresh the page and try again
+</div>
+
+<form class="search-form">
+    <input name="search-text" type="text" placeholder="Search" ng-model="searchText" />
+    <button class="btn hide" type="submit">Submit</button>
+</form>
+
+<div class="flight-list">
+	<div class="flight" ng-repeat="flight in flights | filter: searchText">
+		<a ng-href="#/flight/{{flight.id}}" ng-click="selectFlight(flight)" ng-if="flight.flightNumber">
+			<div class="depart">
+			  <span ng-bind="(flight.localDepartureTime | date: 'EEE d MMMM yyyy') + ', '"></span>
+			  <span ng-bind="(flight.localDepartureTime | date: 'shortTime') + ', '"></span>
+			  <span ng-bind="flight.departureAirport"></span><br />
+			</div>
+			<div class="arrive">
+			  <span ng-bind="(flight.localArrivalTime | date: 'EEE d MMMM yyyy') + ', '"></span>
+			  <span ng-bind="(flight.localArrivalTime | date: 'shortTime') + ', '"></span>
+			  <span ng-bind="flight.arrivalAirport"></span>
+			</div>
+		</a>
+	</div>
+</div>

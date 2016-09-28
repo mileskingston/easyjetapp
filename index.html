@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Easyjet | Search App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <!-- Vendor -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <!-- Javascript -->
+        <script src="app/js/app.js"></script>
+        <script src="app/js/controllers/main.js"></script>
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body ng-app="easyJet">
+        <header class="header ng-cloak" ng-include="'app/templates/header.html'"></header>
+        <div ng-view class="container container-main ng-cloak" ng-controller="MainCtrl"></div>
+    </body>
+</html>

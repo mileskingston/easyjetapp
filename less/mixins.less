@@ -1,0 +1,40 @@
+.transition(@transition) {
+	-wekit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-shadow(@shadow) {
+	-webkit-border-radius: @shadow;
+	-moz-border-radius: @shadow;
+	border-radius: @shadow;
+}
+
+.box-sizing(@box-sizing) {
+    -webkit-box-sizing: @box-sizing;
+    -moz-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+}
+
+.background-clip(@clip) {
+	-webkit-background-clip: @clip;
+	background-clip: @clip;
+}
+
+.container() {
+	padding: @generic-spacing;
+	float: left;
+	width: 100%;
+}
+
+.text-size-adjust(@adjust) {
+    -webkit-text-size-adjust: @adjust;
+    -ms-text-size-adjust: @adjust;
+}

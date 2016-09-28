@@ -1,0 +1,58 @@
+<div class="alert" ng-if="!flight">
+	Oops, something went wrong. Please click back to the search page
+</div>	
+
+<div class="actions"> 
+	<a class="btn" href="#/">Back</a>
+</div>
+
+<div class="flight-details" ng-if="flight">
+	<h1>Flight <span ng-bind="flight.flightNumber.carrierCode"></span><span ng-bind="flight.flightNumber.number"></span></h1>
+	<div class="details availability alert" ng-if="flight.seatsAvailable < 20">
+    	Limited amount of seats left!
+	</div>		  
+	<div class="details depart">
+		<h2>From</h2>
+	    <div ng-bind="(flight.localDepartureTime | date: 'EEE d MMMM yyyy')"></div>
+	    <div>
+	    	<span ng-bind="flight.departureAirport"></span>
+	    	<span ng-if="flight.depTerminalName" ng-bind="'(' + flight.depTerminalName + ')'"></span>
+	    </div>
+	</div>
+	<div class="details arrive">
+	  	<h2>To</h2>
+	    <div ng-bind="(flight.localDepartureTime | date: 'EEE d MMMM yyyy')"></div>
+	    <div ng-bind="flight.arrivalAirport"></div>
+	</div>
+	<div class="details prices">
+	    <h3>Prices</h3>
+	    <div class="title">Adult</div>
+	    <div>
+	    	<span class="label col-50">Pay with Debit Card</span>
+	    	<span class="price col-50" ng-bind="flight.prices.adult.valueWithDebitCard | currency:'£'"></span>
+	    </div>
+	    <div>
+	    	<span class="label col-50">Pay with Credit Card</span>
+	    	<span class="price col-50" ng-bind="flight.prices.adult.valueWithCreditCard | currency:'£'"></span>
+	    </div>
+    	<div class="title">Child</div>
+    	<div>
+    		<span class="label col-50">Pay with Debit Card</span>
+	    	<span class="price col-50" ng-bind="flight.prices.child.valueWithDebitCard | currency:'£'"></span>
+	    </div>
+    	<div>
+	    	<span class="label col-50">Pay with Credit Card</span>
+	    	<span class="price col-50" ng-bind="flight.prices.child.valueWithCreditCard | currency:'£'"></span>
+    	</div>
+    	<div class="title">Infant</div>
+	    <span class="price" ng-if="!flight.prices.infant"><b>Free</b></span>
+	    <div>
+	    	<span class="label col-50" ng-if="flight.prices.infant">Pay with Debit Card</span>
+	    	<span class="price col-50" ng-if="flight.prices.infant" ng-bind="flight.prices.infant.valueWithDebitCard | currency:'£'"></span>
+	   	</div>
+	   	<div>
+	    	<span class="label col-50" ng-if="flight.prices.infant">Pay with Credit Card</span>
+	    	<span class="price col-50" ng-if="flight.prices.infant" ng-bind="flight.prices.infant.valueWithCreditCard | currency:'£'"></span>
+		</div>
+	</div>
+</div>
