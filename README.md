@@ -4,4 +4,4 @@ Easyjet search app
 Next Phase
 - create data service and remove from controller
 - further unit tests
-- advance filter tests
+- advance clientside filtering
