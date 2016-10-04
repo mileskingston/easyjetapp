@@ -23,3 +23,20 @@
 		</a>
 	</div>
 </div>
+
+<div easy-carousel class="carousel">
+	<ul class="flight" ng-repeat="flight in flights">
+		<li ng-if="flight.flightNumber">
+			<div class="depart">
+			  <span ng-bind="(flight.localDepartureTime | date: 'EEE d MMMM yyyy') + ', '"></span>
+			  <span ng-bind="(flight.localDepartureTime | date: 'shortTime') + ', '"></span>
+			  <span ng-bind="flight.departureAirport"></span><br />
+			</div>
+			<div class="arrive">
+			  <span ng-bind="(flight.localArrivalTime | date: 'EEE d MMMM yyyy') + ', '"></span>
+			  <span ng-bind="(flight.localArrivalTime | date: 'shortTime') + ', '"></span>
+			  <span ng-bind="flight.arrivalAirport"></span>
+			</div>
+		</li>
+	</ul>
+</div>
